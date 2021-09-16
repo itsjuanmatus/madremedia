@@ -148,7 +148,7 @@ const Hamburger = ({ state }: any) => {
           ref={(el: any) => (cityBackground = el)}
           className="menu-city-background"
         ></div>
-        <div className="container ">
+        <div className="  ">
           <div className="wrapper">
             <div className="menu-links">
               <nav>

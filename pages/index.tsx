@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className="container">
+    <div className=" ">
       <div className="wrapper">
         <h1>MADRE MEDIA AGENCY</h1>
       </div>
