@@ -4,13 +4,16 @@ import gsap from "gsap";
 
 import austin from ".././public/images/austin.webp";
 import newyork from ".././public/images/newyork.webp";
+import miami from ".././public/images/miami.webp";
+
+
+let cities = [
+  { name: "Miami", image: miami },
+];
+
 
 const Hamburger = ({ state }: any) => {
-  const cities = [
-    { name: "Miami", image: austin },
-    { name: "Nicaragua", image: newyork },
-  ];
-
+  
   // vars for our animaed dom nodes
   let menu = useRef(null);
   let revealMenu = useRef(null);
@@ -88,17 +91,18 @@ const Hamburger = ({ state }: any) => {
   const handleCity = (city: any, target: any) => {
     gsap.to(target, {
       duration: 0,
-      background: `url(${city}) center center`,
+      
+      background: `url(${city}) center center`
     });
     gsap.to(target, {
       duration: 0.4,
       opacity: 1,
-      ease: "power3.inOut",
+      ease: "power3.inOut"
     });
     gsap.from(target, {
       duration: 0.4,
       skewY: 2,
-      transformOrigin: "right top",
+      transformOrigin: "right top"
     });
   };
 
@@ -134,7 +138,7 @@ const Hamburger = ({ state }: any) => {
   };
 
   return (
-    <div ref={(el: any) => (menu = el)} className="hamburger-menu">
+    <div ref={(el: any) => (menu = el)} className="hamburger-menu ">
       <div
         ref={(el: any) => (revealMenuBackground = el)}
         className="menu-secondary-background-color"
@@ -144,7 +148,7 @@ const Hamburger = ({ state }: any) => {
           ref={(el: any) => (cityBackground = el)}
           className="menu-city-background"
         ></div>
-        <div className="container">
+        <div className="container ">
           <div className="wrapper">
             <div className="menu-links">
               <nav>
@@ -192,6 +196,9 @@ const Hamburger = ({ state }: any) => {
                     {el.name}
                   </span>
                 ))}
+
+                
+                
               </div>
             </div>
           </div>

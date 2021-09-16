@@ -2,8 +2,10 @@ import React from "react";
 
 export default function contactUs() {
   return (
-    <div>
-      <p>Feel free to reach us</p>
+    <div className="container">
+      <div className="wrapper">
+        <h1>CONTACT US</h1>
+      </div>
     </div>
   );
 }
