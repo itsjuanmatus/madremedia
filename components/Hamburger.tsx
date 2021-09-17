@@ -138,12 +138,12 @@ const Hamburger = ({ state }: any) => {
   };
 
   return (
-    <div ref={(el: any) => (menu = el)} className="hamburger-menu ">
+    <div ref={(el: any) => (menu = el)} className="hamburger-menu">
       <div
         ref={(el: any) => (revealMenuBackground = el)}
-        className="menu-secondary-background-color"
+        className="menu-secondary-background-color "
       ></div>
-      <div ref={(el: any) => (revealMenu = el)} className="menu-layer">
+      <div ref={(el: any) => (revealMenu = el)} className="menu-layer  z-40">
         <div
           ref={(el: any) => (cityBackground = el)}
           className="menu-city-background"
