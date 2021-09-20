@@ -1,0 +1,159 @@
+.products {
+  position: sticky;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 8;
+  overflow: hidden;
+  background: white;
+  overflow: visible;
+  .close,
+  .menu-title {
+    z-index: 1000;
+    position: absolute;
+    color: black;
+    top: 3rem;
+    right: 5.8rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    svg {
+      height: 30px;
+    }
+  }
+  .menu-title {
+    top: 3rem;
+    left: 5.8rem;
+    font-size: 1.4rem;
+  }
+  .menu {
+    height: 100vh;
+    .menu-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 28rem 0;
+      height: 0vh;
+      ul {
+        width: 100%;
+        display: block;
+        li {
+          position: relative;
+          width: 100%;
+          height: 115px;
+          a {
+            height: 100%;
+            .wrapper {
+              height: 100%;
+              display: flex;
+              align-items: flex-end;
+              .title {
+                margin: 0 1rem;
+                z-index: 10;
+                &:hover {
+                  -webkit-text-fill-color: white;
+                  -webkit-text-stroke-width: 1px;
+                  -webkit-text-stroke-color: black;
+                }
+                h2 {
+                  overflow: hidden;
+                  margin: 0;
+                  font-size: 4rem;
+                  font-weight: 500;
+                }
+              }
+              .thumbnail {
+                margin-bottom: 1.4rem;
+                overflow: hidden;
+                position: absolute;
+                width: 7.6rem;
+                height: 5rem;
+                right: 0;
+                z-index: -1;
+                .mask {
+                  background: white;
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                }
+              }
+              .floating-image {
+                pointer-events: none;
+                width: 24rem;
+                position: absolute;
+                /* background-size: cover;
+                background-position: 50%; */
+                z-index: 99;
+                overflow: hidden;
+              }
+            }
+
+            .line {
+              height: 1px;
+              width: 100%;
+              background: black;
+              margin-bottom: 0.8rem;
+              position: relative;
+              display: flex;
+              align-items: center;
+              &.flex-0 {
+                flex: 0;
+                &.after {
+                  display: none;
+                }
+              }
+              &.flex-1 {
+                flex: 1;
+              }
+              &.flex-2 {
+                flex: 2;
+              }
+              &.flex-3 {
+                flex: 3;
+              }
+              &:after {
+                content: "";
+                position: absolute;
+                height: 6px;
+                width: 6px;
+                border-radius: 100%;
+                background: black;
+              }
+              &.left {
+                &:after {
+                  right: 0;
+                }
+              }
+              .mask {
+                background: white;
+                width: 100%;
+                height: 6px;
+                z-index: 9;
+                position: absolute;
+                &.right {
+                  right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cursor {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background: #e7dede;
+  border-radius: 100%;
+  pointer-events: none;
+}

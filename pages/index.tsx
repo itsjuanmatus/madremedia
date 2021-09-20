@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import { useState } from "react";
+import Menu from "../components/Menu";
 import useMousePosition from "../hooks/useMousePosition";
 
 const Home: NextPage = () => {
+  const [menuState, setMenuState] = useState(true);
+  const [cursorHovered, setCursorHovered] = useState(false);
+
   const { x, y } = useMousePosition();
 
   const Cards = [
@@ -27,8 +31,8 @@ const Home: NextPage = () => {
   const [hoverState, setHoverState] = useState(false);
 
   return (
-    <div className="mt-10 mx-20 flex flex-col">
-      <div className="flex justify-between items-center mb-10 pr-36">
+    <div className="mt-10 mx-20 grid grid-cols-1 ">
+      <div className="flex justify-between items-center mb-10 pr-36 ">
         <span className="mainText">Madre</span>
         <div className="w-60">
           <h3 className="font-semibold text-2xl">Who we are</h3>
@@ -38,7 +42,7 @@ const Home: NextPage = () => {
           </p>
         </div>
       </div>
-      <div className="-mt-16 mb-10">
+      <div className="-mt-16 mb-10 relative">
         <p className="marquee">
           <span className="mainText">
             Media Media Media Media Media Media Media Media Media Media Media
@@ -63,12 +67,9 @@ const Home: NextPage = () => {
       </div>
 
       <div className="-mt-28 -z-1 imageBehind">
-        <img
-          src="/images/miami.webp"
-          className="relative filter brightness-90 "
-        />
+        <img src="/images/miami.webp" className=" filter brightness-90 " />
 
-        <div className="flex -mt-96 absolute w-full max-w-7xl">
+        <div className="flex -mt-96 relative w-full max-w-7xl">
           <h1 className="text-white text-8xl absolute  bg-black -mt-64 px-10 py-5 pl-36">
             {" "}
             WHAT WE DO
@@ -98,8 +99,23 @@ const Home: NextPage = () => {
       <div className="bg-pink w-full h-96 p-10">
         <h1 className="text-black font-bold text-8xl">OUR PROJECTS</h1>
         <div className="text-black font-bold text-3xl mt-20 relative">
-          HOVER ON THIS
-          <div className="absolute w-36 bg-black"></div>
+          <motion.div
+            animate={{
+              x: x,
+              y: y,
+              scale: cursorHovered ? 1.2 : 1,
+              opacity: cursorHovered ? 0.8 : 0,
+            }}
+            transition={{ ease: "linear", duration: 0.2 }}
+            className="cursor"
+          ></motion.div>
+          <Menu
+            x={x}
+            y={y}
+            menuState={menuState}
+            setMenuState={setMenuState}
+            setCursorHovered={setCursorHovered}
+          />
         </div>
       </div>
     </div>
