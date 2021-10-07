@@ -30,7 +30,7 @@ const data = [
     src: austin,
   },
   {
-    title: "Project 4",
+    title: "Project 4",/*  */
     id: "Yeezy-700-Geode",
     leftLineFlex: 3,
     rightLineFlex: 2,
